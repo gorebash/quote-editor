@@ -11,6 +11,16 @@
   </head>
 
   <body>
+
+    <% flash.each do |message_type, message_content| %>
+      <div class="ui <%= message_type %> message transition">
+        <i class="close icon"></i>
+        <div class="header">
+          <%= message_content %>
+        </div>
+      </div>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>

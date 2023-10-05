@@ -1,0 +1,6 @@
+<%# Prepend in Turbo Frame with id 'quotes' with the app/views/quotes/_quote.html.erb partial %>
+<%# Equivalent to: turbo_stream.prepend "quotes", partial: "quotes/quote", locals: { quote: @quote } %>
+<%= turbo_stream.prepend "quotes", @quote %>
+
+<%# Set turbo frame with id new_quote with empty content %>
+<%= turbo_stream.update Quote.new, "" %>
